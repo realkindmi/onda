@@ -5,7 +5,7 @@
 .introWrap .intro_main {position:absolute; top:181px; left:50%; -webkit-transform:translate(-50%); transform:translate(-50%); text-align:center;}
 .introWrap .intro_main .main_txt {margin-top:34px; font-size:20px; color:#920783;}
 .introWrap .onda_logo {width:247px; height:56px; text-indent:-9999px; background:url(../images/logoOnda.png) no-repeat; background-size:100%;}
-.introWrap .tmoney_logo {position:absolute; left:50%; bottom:35px; width:151px; height:32px; -webkit-transform:translate(-50%); transform:translate(-50%); text-indent:-9999px; background:url(../images/logoWTmoney.png) no-repeat; background-size:100%;}
+.introWrap .tmoney_logo {position:absolute; left:50%; bottom:35px; width:151px; height:32px; -webkit-transform:translate(-50%); transform:translate(-50%); text-indent:-9999px; background:url(../images/logoWtmoney.png) no-repeat; background-size:100%;}
 
 /* agreement */
 .agree_top_info {margin-top:15px;}
