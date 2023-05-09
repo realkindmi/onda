@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+	<meta name="format-detection" content="telephone=no">
+	<title></title>
+	<link rel="stylesheet" href="../css/common.css" />
+	<link rel="stylesheet" href="../css/style_onda.css" />
+   	<script src="../js/jquery-3.3.1.min.js"></script>
+	<script src="../js/common.js"></script>
+</head>
+<body>
+<div id="Wrap">
+    <div class="map_area">
+        <div id="map">
+        	
+        </div>
+    </div>
+    <div class="search_box">
+        <div class="info_box">
+            <div class="top_area txtc clearfix">
+                <p class="state_txt">목적지로 이동 중입니다.</p>
+                <!--<p class="state_txt">목적지에 도착 하였습니다.</p>-->
+            </div>
+            <div class="contents_area pv03">
+                <div class="state_ct">
+                    <p class="info">중형택시</p>
+                    <p class="info">서울 01 아 0007</p>
+                </div>
+                <div class="route_history">
+                	<div class="route_tb">
+						<div class="route_row">
+							<div class="da"><em class="time">15:49</em><span class="txt1">출발</span></div>
+							<div class="address_txt">
+								<p>서울특별시 종로구 구기동 비봉2길 304</p>
+							</div>
+						</div>
+						<div class="route_row">
+							<div class="da"><em class="time t2">15:49</em><span class="txt2">도착</span></div>
+							<div class="address_txt">
+								<p>서울특별시 중구 남대문로 5가 후암로 98</p>
+							</div>
+						</div>
+					</div>
+				</div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+$(window).on('load', function(){
+	let window_h = $(window).outerHeight();
+	let bottom_h = $('.search_box').outerHeight();
+	$('#map').css('height', window_h - bottom_h + 15 +'px');
+});
+</script>
+</body>
+</html>

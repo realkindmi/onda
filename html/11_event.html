@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+	<meta name="format-detection" content="telephone=no">
+	<title></title>
+	<link rel="stylesheet" href="../css/style_gmarket.css" />
+</head>
+<body>
+<div id="Wrap">
+    <div class="eventLanding">
+        <section class="howoto section">
+            <img src="../images/event_img01.png" alt="">
+        </section>
+        <section class="gift section">
+            <img src="../images/event_img02.png" alt="">
+        </section>
+        <section class="apply section">
+            <div class="applyDesc">
+                <p>* 본 이벤트는 티머니가 주관하며, G마켓과 제휴하여 이벤트를 진행합니다.</p>
+                <p>* 본이벤트는 아래 개인정보를 수집 및 이용, 제 3자가 제공에 동의한 후 신청할 수 있습니다.</p>
+            </div>
+            <table class="agreement">
+                <thead>
+                    <tr>
+                        <th>개인정보 수집 및 이용에 관한 동의</th>
+                        <th>개인정보 제 3자 제공 동의</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <ul>
+                                <li>
+                                    <strong>1. 개인정보 수집 항목</strong>
+                                    <p> 이름, 휴대폰 번호, G마켓 아이디</p>
+                                </li>
+                                <li>
+                                    <strong>2. 수집 및 이용 목적</strong>
+                                    <p>이벤트 참여 내역 확인 및 쿠폰 발송</p>
+                                </li>
+                                <li>
+                                    <strong>3. 보유 및 이용 기간</strong>
+                                    <p>이벤트 종료 후 1개월까지 보유 후 파기</p>
+                                </li>
+                                <li>
+                                    <strong>4. 개인정보의 수집 및 이용에 대한 동의를 거부할 수 있으며, 이 경우 이벤트 참여가 제한됩니다.</strong>
+                                </li>
+                            </ul>
+                            <div class="agreeChk">
+                                <input id="collect" type="checkbox" required><label for="collect">개인정보 수집 및 이용에 동의합니다.</label>
+                            </div>
+                        </td>
+                        <td>
+                            <ul>
+                                <li>
+                                    <strong>1. 개인정보를 제공받는 자</strong>
+                                    <p>이베이코리아 유한 책임회사</p>
+                                </li>
+                                <li>
+                                    <strong>2. 개인정보를 제공받는 자의 이용 목적</strong>
+                                    <p>이벤트 진행 및 쿠폰 발송</p>
+                                </li>
+                                <li>
+                                    <strong>3. 제공하는 개인정보의 항목</strong>
+                                    <p>이름, 휴대폰 번호, G마켓 아이디</p>
+                                </li>
+                                <li>
+                                    <strong>4. 개인정보 제공기간</strong>
+                                    <p>이벤트 기간 및 이벤트 종료 후 1개월 까지 보유 후 파기</p>
+                                </li>
+                                <li>
+                                    <strong>5. 개인정보의 제3자 제공에 대한 동의를 거부할 수 있으며, 이 경우 이벤트 참여가 제한됩니다.</strong>
+                                </li>
+                            </ul>
+                            <div class="agreeChk">
+                                <input id="thrid" type="checkbox" required><label for="thrid">개인정보 제3자 제공에 동의합니다.</label>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <dl class="inputItem clearfix">
+                <dt>이름</dt>
+                <dd>
+                    <input type="text" required>
+                </dd>
+                <dt>휴대폰번호</dt>
+                <dd>
+                    <input type="text" required>
+                    <p class="remark">* 이벤트 신청 시 입력한 휴대폰 번호와 티머니onda를 이용한 휴대폰 번호가 동일해야만 쿠폰 발급이 가능합니다.</p>
+                </dd>
+                <dt>G마켓 아이디</dt>
+                <dd>
+                    <input type="text" required>
+                    <p class="remark">* 입력하신 G마켓 아이디로 쿠폰이 발급되오니, 정확하게 입력해주세요.</p>
+                </dd>
+            </dl>
+            <div class="btnApply">
+                <button type="button" disabled>신청하기</button>
+            </div>
+            <div class="downloadBtn">
+                <h3>티머니 <span>onda</span> 다운로드</h3>
+                <a class="googlePlay" href="javascript:void(0);">Google play</a>
+                <a class="appStore" href="javascript:void(0);">App Store</a>
+            </div>
+        </section>
+        <section class="notice section">
+            <img src="../images/event_img03.png" alt="">
+        </section>
+    </div>
+</div>
+<!--s.popup-->
+<div class="popWrap" style="display:none;">
+    <div class="pop_box">
+        <div class="pop_ct">
+            <div class="pop_message">
+                <!-- case 1 -->
+                <p>티머니onda 이벤트 신청이<br>완료되었습니다.</p>
+                <!-- case 2 -->
+                <!--<p>이미 티머니onda 이벤트를 신청하셨습니다.</p>-->
+            </div>
+        </div>
+        <div class="pop_button">
+            <button class="btn type2" type="button">확인</button>
+        </div>
+    </div>
+</div>
+<!--e.popup-->
+<script>
+$(document).ready(function(){
+    $('.btnApply').click(function(){
+        $('.popWrap').fadeIn();
+    });
+    $('.popWrap .pop_button').click(function(){
+        $('.popWrap').fadeOut();
+    });
+});
+</script>
+</body>
+</html>

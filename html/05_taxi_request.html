@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+	<meta name="format-detection" content="telephone=no">
+	<title></title>
+	<link rel="stylesheet" href="../css/swiper.min.css" />
+	<link rel="stylesheet" href="../css/common.css" />
+	<link rel="stylesheet" href="../css/style_onda.css" />
+   	<script src="../js/jquery-3.3.1.min.js"></script>
+	<script src="../js/common.js"></script>
+</head>
+<body>
+<div id="Wrap">
+    <div class="map_area">
+        
+    </div>
+    <div class="search_box">
+        <div class="info_box">
+        	<div class="drop_btn active"></div>
+        	<div class="taxi_list">
+        		<div class="ct_tt clearfix">
+        			<h2 class="tt">택시 종류</h2>
+        			<div class="right">
+        				<span class="info">서비스 이용료<a href="javscript:void(0);"></a></span>
+        			</div>
+        		</div>
+				<div class="taxi_pay clearfix">
+					<div class="taxi_type">
+						<input id="type1" class="radio_btn" name="taxi_type" type="radio" checked><label for="type1"><img src="../images/icTaxi.png" alt="">중형 택시</label>
+					</div>
+					<div class="pay_info">
+						<span class="txt1">(서비스 이용료 포함)</span>
+						<span class="txt2">18,000원 예상</span>
+					</div>
+				</div>
+				<div class="taxi_pay clearfix">
+					<div class="taxi_type">
+						<input id="type2" class="radio_btn" name="taxi_type" type="radio"><label for="type2"><img src="../images/icTaxi_deluxe.png" alt="">모범 택시</label>
+					</div>
+					<div class="pay_info">
+						<span class="txt1">(서비스 이용료 포함)</span>
+						<span class="txt2">25,000원 예상</span>
+					</div>
+				</div>
+            </div>
+            <div class="pay_list">
+            	<div class="ct_tt clearfix">
+        			<h2 class="tt">결제 수단</h2>
+        		</div>
+                <ul class="container">
+					<li>
+						<a href="javascript:void(0);">
+							<span class="tmoneypay left">티머니페이 자동결제</span>
+							<span class="right">결제 수단 변경</span>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:void(0);">
+							<span class="directpay left">현장 결제</span>
+							<span class="right">결제 수단 변경</span>
+						</a>
+					</li>
+           			<li>
+						<a href="javascript:void(0);">
+							<span class="coupon left">적용 가능 쿠폰 없음</span>
+							<span class="right">쿠폰함</span>
+						</a>
+					</li>
+            	</ul>
+            </div>
+        </div>
+        <div class="search_btn t1">
+            <button class="Btn typeA" type="button">승차 요청하기</button>
+        </div>
+    </div>
+</div>
+</body>
+</html>

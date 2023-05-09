@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+	<meta name="format-detection" content="telephone=no">
+	<title></title>
+	<link rel="stylesheet" href="../css/common.css" />
+	<link rel="stylesheet" href="../css/style_onda.css" />
+   	<script src="../js/jquery-3.3.1.min.js"></script>
+	<script src="../js/common.js"></script>
+</head>
+<body>
+<div id="Wrap">
+    <header id="header">
+        <h1>휴대폰 인증</h1>
+        <a class="btn close left" href="javascript:void(0);">닫기</a>
+    </header>
+    <div class="container">
+        <div class="top_txt">
+            <p>휴대폰 번호는 기사님과의<br>연락수단으로 이용됩니다.</p>
+        </div>
+        <div class="ct_area">
+            <div class="ct_tt">휴대폰 번호</div>
+            <div class="ct_item">
+                <div class="with_btn item_div">
+                    <input class="input" type="number" maxlength="11" placeholder="휴대폰 번호를 입력해 주세요">
+                    <button class="Btn typeA" type="button" disabled>인증번호 발송</button>
+                </div>
+                <div class="item_div">
+                    <input class="input" name="Cnum" type="number" maxlength="6" placeholder="인증번호를 입력해 주세요">
+                </div>
+                <p class="status_txt">인증번호 입력시까지 <span>2분 45초</span> 남음.</p>
+            </div>
+        </div>
+    </div>
+    <div class="bottom_area fixed">
+        <button class="Btn typeA" type="button" disabled>다음</button>
+    </div>
+</div>
+<!--s.popup-->
+<div class="popWrap">
+    <div class="pop_box">
+        <div class="pop_ct alert">
+            <div class="pop_message">
+                <p>집 주소가 설정되지 않았습니다.<br>설정하시겠습니까?</p>
+            </div>
+        </div>
+        <div class="pop_button">
+            <button class="btn type1" type="button">아니요</button>
+            <button class="btn type2" type="button">예</button>
+        </div>
+    </div>
+</div>
+<!--e.popup-->
+</body>
+</html>

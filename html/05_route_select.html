@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+	<meta name="format-detection" content="telephone=no">
+	<title></title>
+	<link rel="stylesheet" href="../css/swiper.min.css" />
+	<link rel="stylesheet" href="../css/common.css" />
+	<link rel="stylesheet" href="../css/style_onda.css" />
+   	<script src="../js/jquery-3.3.1.min.js"></script>
+	<script src="../js/common.js"></script>
+</head>
+<body>
+<div id="Wrap">
+    <div class="map_area">
+        
+    </div>
+    <div class="route_box">
+        <div class="route_tb">
+            <div class="route_row">
+                <div class="da"><span class="txt1">출발</span></div>
+                <div class="address_txt">
+                    <div class="address">서울특별시 용산구 이태원로 285</div>
+                </div>
+            </div>
+            <div class="route_row">
+                <div class="da"><span class="txt2">도착</span></div>
+                <div class="address_txt">
+                    <div class="address">서울특별시 용산구 한강대로 401-2</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="search_box drop">
+        <!-- s:경로선택 -->
+        <div class="info_box layer t1">
+            <div class="swiper-container snbSwiper">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide swiper-slide on">
+						<a href="#">
+						<em>추천경로</em>
+						<span class="price">18,000원 예상</span>
+						<p class="time">약 1시간 15분 소요</p></a>
+					</div>
+					<div class="swiper-slide"><a href="#">
+						<em>최소시간</em>
+						<span class="price">345,000원 예상</span>
+						<p class="time">약 58분 소요</p></a>
+					</div>
+					<div class="swiper-slide"><a href="#">
+						<em>무료도로</em>
+						<span class="price">18,000원 예상</span>
+						<p class="time">약 1시간 58분 소요</p></a>
+					</div>
+					<div class="swiper-slide"><a href="#">
+						<em>최소시간</em>
+						<span class="price">18,000원 예상</span>
+						<p class="time">약 1시간 15분 소요</p></a>
+					</div>
+				</div>
+        	</div>
+        </div>
+    	<!-- e:경로선택 -->
+    	<!-- s:택시요청 -->
+        <div class="info_box layer t2">
+        	<div class="drop_btn"></div>
+        	<div class="taxi_list">
+        		<div class="ct_tt clearfix">
+        			<h2 class="tt">택시 종류</h2>
+        			<div class="right">
+        				<span class="info">서비스 이용료<a href="javscript:void(0);"></a></span>
+        			</div>
+        		</div>
+				<div class="taxi_pay clearfix">
+					<div class="taxi_type">
+						<input id="type1" class="radio_btn" name="taxi_type" type="radio" checked><label for="type1"><img src="../images/icTaxi.png" alt="">중형 택시</label>
+					</div>
+					<div class="pay_info">
+						<span class="txt1">(서비스 이용료 포함)</span>
+						<span class="txt2">18,000원 예상</span>
+					</div>
+				</div>
+            </div>
+            <div class="pay_list">
+            	<div class="ct_tt clearfix">
+        			<h2 class="tt">결제 수단</h2>
+        		</div>
+                <ul class="container">
+					<li>
+						<a href="javascript:void(0);">
+							<span class="directpay left">현장 결제</span>
+							<span class="right">결제 수단 변경</span>
+						</a>
+					</li>
+            	</ul>
+            </div>
+        </div>
+        <!-- e:택시요청 -->
+        <div class="search_btn t1">
+            <button class="Btn typeA" type="button">다음</button>
+        </div>
+    </div>
+    <div class="dim"></div>
+</div>
+<script src="../js/swiper-bundle.min.js"></script>
+<script>
+	var swiper = new Swiper('.snbSwiper', {
+		slidesPerView: 'auto',
+		spaceBetween: 7,
+		preventClicks: true,
+		preventClicksPropagation: false,
+		observer: true,
+		observeParents: true
+	});
+	
+	var $snbSwiperItem = $('.snbSwiper .swiper-wrapper .swiper-slide a');
+	$snbSwiperItem.click(function(){
+		var a = $(this);
+		var target = a.parent();
+		addBubble(a);
+		$snbSwiperItem.parent().removeClass('on');
+		target.addClass('on');
+		muCenter(target);
+	})
+	
+	function addBubble(a){
+		var html = '<div class="bb_container">';
+		html += '<div class="bubble_box">';
+		html += '<span class="pointer"></span>';
+		html += '<div class="txt_wrap">';
+		html += '<p class="bb_txt">교통 상황에 따라 실제 경로와 요금은 달라질 수 있습니다.</p>';
+		html += '<p class="bb_txt hl">선택하신 경로에 유료도로가 포함되어 있습니다.</p>';
+		html += '</div>';
+		html += '</div>';
+		html += '</div>';
+		
+		a.parents('.info_box').append(html);
+		$('.bubble_box').stop().fadeOut(2500);
+	}
+	
+	function muCenter(target){
+		var snbwrap = $('.snbSwiper .swiper-wrapper');
+		var targetPos = target.position();
+		var box = $('.snbSwiper');
+		var boxHarf = box.width()/2;
+		var pos;
+		var pos2;
+		var listWidth=0;
+		
+		snbwrap.find('.swiper-slide').each(function(){ listWidth += $(this).outerWidth();})
+		
+		var selectTargetPos = targetPos.left + target.outerWidth()/2;
+		if (selectTargetPos <= boxHarf) { // left
+			pos = 0;
+			pos2 = targetPos.left + target.outerWidth()/2 + 16;
+		} else if ((listWidth - selectTargetPos) <= boxHarf) { //right
+			pos = listWidth-box.width() + 20;
+			pos2 = $('.bb_container').outerWidth()/2 + $('.swiper-slide').outerWidth()/2 + 16;
+		} else {
+			pos = selectTargetPos - boxHarf;
+			pos2 = $('.bb_container').outerWidth()/2;
+		}
+		setTimeout(function(){snbwrap.css({
+			"transform": "translate3d("+ (pos*-1) +"px, 0, 0)",
+			"transition-duration": "500ms"
+		}), $('.bubble_box .pointer').css('left', pos2)}, 1);
+	}
+</script>
+<script>
+$(function(){
+	var targeBox1 = $('.info_box.t1');
+	var targeBox2 = $('.info_box.t2');
+	var targetH1 = targeBox1.outerHeight();
+	var targetH2 = targeBox2.outerHeight();
+	var setH = targetH2 - targetH1 - 30;
+	var y = 0;
+	var yy = 0;
+	
+	$('.search_box').bind('touchstart', function(e) {
+		var event = e.originalEvent;
+		y = e.touches[0].screenY;
+	});
+	$('.search_box').bind('touchmove', function(e) {
+		var event = e.originalEvent;
+		yy = parseInt(event.touches[0].screenY - y);
+		if( yy > 0 ){
+			targeBox1.css('transform', 'translateY(0)');
+			targeBox2.css('transform', 'translateY('+ setH +'px)');
+			$('.drop_btn').removeClass('active');
+			$('.search_btn .Btn').text('다음');
+			$('.dim').css('opacity', '0');
+		} else {
+			targeBox1.css('transform', 'translateY('+ targetH1 +'px)');
+			targeBox2.css('transform', 'translateY(0)');
+			$('.drop_btn').addClass('active');
+			$('.search_btn .Btn').text('승차 요청하기');
+			$('.dim').css('opacity', '0.6');
+		}
+		event.preventDefault();
+	});
+});
+</script>
+</body>
+</html>

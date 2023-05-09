@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width">
+	<meta name="format-detection" content="telephone=no">
+	<title></title>
+	<link rel="stylesheet" href="../css/common.css" />
+	<link rel="stylesheet" href="../css/style_onda.css" />
+   	<script src="../js/jquery-3.3.1.min.js"></script>
+	<script src="../js/common.js"></script>
+</head>
+<body>
+<div id="Wrap">
+    <header id="header">
+        <h1>최근 기록 편집</h1>
+        <a class="btn back left" href="06_favorite.html">뒤로가기</a>
+    </header>
+    <div class="content">
+        <div class="record_list chk_list">
+            <div class="chk_items_all">
+                <input id="chk_all" name="chk_all" type="checkbox"><label for="chk_all">전체 선택</label>
+            </div>
+            <ul class="chk_items">
+                <li>
+                    <input id="record1" class="chk_box" name="chk_item" type="checkbox" checked>
+                    <label for="record1">
+                        <span class="name">코엑스 <em>500m</em></span>
+                        <address class="address">서울특별시 강남구 영동대로 513</address>
+                    </label>
+                </li>
+                <li>
+                    <input id="record2" class="chk_box" name="chk_item" type="checkbox" checked>
+                    <label for="record2">
+                        <span class="name">코엑스 <em>500m</em></span>
+                        <address class="address">서울특별시 강남구 영동대로 513</address>
+                    </label>
+                </li>
+                <li>
+                    <input id="record3" class="chk_box" name="chk_item" type="checkbox">
+                    <label for="record3">
+                        <span class="name">코엑스 <em>500m</em></span>
+                        <address class="address">서울특별시 강남구 영동대로 513</address>
+                    </label>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="bottom_area container">
+        <button class="Btn typeB" type="button">삭제</button>
+    </div>
+</div>
+</body>
+</html>
